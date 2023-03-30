@@ -34,7 +34,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./src/assets/gif-kapture.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./src/assets/gif-kapture2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap] (https://getkap.co/) for macOS
 
