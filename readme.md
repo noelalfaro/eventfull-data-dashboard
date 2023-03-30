@@ -2,9 +2,9 @@
 
 Submitted by: Noel Alfaro
 
-This is a web app built using react and uses the Seatgeek API to showcase different events across the United States.
+This is a web app built using react and uses the Seatgeek API to showcase different events across the United States. The user can search across different events that are being fetched.
 
-Time spent: ~5 hours spent in total
+Time spent: ~9 hours spent in total
 
 ## Required Features
 
@@ -15,9 +15,9 @@ The following **required** functionality is completed:
 - [x] **The app dashboard includes at least three summary statistics about the data such as**
   - [x] Event Title
   - [x] Event Type
+  - [x] Event City
   - [x] Event State
-  - [x] Event Date
-- [ ] **A search bar allows the user to search for an item in the fetched data**
+- [x] **A search bar allows the user to search for an item in the fetched data**
 - [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:

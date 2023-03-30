@@ -18,6 +18,8 @@ function App() {
       );
       const json = await response.json();
       setList(json)
+      console.log('json: ', json);
+
     };
 
     fetchSeatGeekData().catch(console.error);
