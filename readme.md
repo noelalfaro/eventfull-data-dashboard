@@ -1,15 +1,15 @@
 # Web Development Project 6 - Seatfull Data Dashboard
 
 Submitted by: Noel Alfaro
-This is a web app built using react and uses the Seatgeek API to showcase different events across the United States. The user can search through events by their different venues and click any specific event to view more information about it. The site also uses react-router-dom to accomplish the navigation.
+This is a web app built using react and uses the Seatgeek API to showcase different events across the United States. The user can search through events by their different venues and click any specific event to view more information about it. The site also uses react-router-dom to accomplish the navigation. Using the recharts npm package, the site charts the most popular upcoming events by state as well
 
-Time spent: ~6 hours spent in total
+Time spent: ~8 hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [ ] **The app includes at least two unique chart developed using the fetched data that tell an interesting story**
+- [x] **The app includes at least one unique chart developed using the fetched data that tell an interesting story**
 - [x] **Clicking on an item in the list view displays more details about it**
 - [x] **Clicking on an item has a direct, unique link to that item's detail view page**
 
@@ -20,13 +20,13 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you added to improve the site's functionality!
+- Light and Dark Mode implemented
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./src/assets/gif-kapture-3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./src/assets/gif-kapture4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 
@@ -39,11 +39,11 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+It was difficult to figure out how to chart the data given by the Seatgeek API
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2023
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

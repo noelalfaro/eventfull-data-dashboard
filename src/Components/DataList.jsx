@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import ToolContainer from './ToolContainer'
 import EventInfo from './EventInfo';
+import EventChart from './EventChart';
+import { ResponsiveContainer } from 'recharts';
 
 export default function DataList({ list }) {
+
     const [filteredResults, setFilteredResults] = useState([]);
     const [searchInput, setSearchInput] = useState("");
 
@@ -17,12 +20,15 @@ export default function DataList({ list }) {
     }
 
 
-    console.log(filteredResults);
+    // console.log(filteredResults);
 
+    // console.log('list: ', list);
     return (
         <div className='data-container'>
 
-            <ToolContainer />
+            <ResponsiveContainer width={900} height="50%"><EventChart list={list} /></ResponsiveContainer>
+
+
 
             <div className='search-container'>
                 <input type="text" placeholder='Search for Event by Venue' value={searchInput} onChange={(inputString) => searchItems(inputString.target.value)} />
@@ -36,8 +42,8 @@ export default function DataList({ list }) {
                         <tr>
                             <th className='tableHead'>Event Venue</th>
                             <th className='tableHead'>Event Type</th>
-                            <th className='tableHead'>Event State</th>
-                            <th className='tableHead'>Event Date</th>
+                            <th className='tableHead'>City</th>
+                            <th className='tableHead'>State</th>
                         </tr>
                     </thead>
 
@@ -54,6 +60,7 @@ export default function DataList({ list }) {
                                             type={item.type}
                                             city={item.venue.city}
                                             state={item.venue.state}
+                                            list={list}
 
                                         />
                                     </tr>
@@ -68,6 +75,7 @@ export default function DataList({ list }) {
                                             type={list.events[event].type}
                                             city={list.events[event].venue.city}
                                             state={list.events[event].venue.state}
+                                            list={list}
                                         />
                                     </tr>
                                 )

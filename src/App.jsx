@@ -12,7 +12,7 @@ function App() {
     const fetchSeatGeekData = async () => {
       const response = await fetch(
         // how do we call an API using fetch? 
-        "https://api.seatgeek.com/2/events?per_page=100&client_id="
+        "https://api.seatgeek.com/2/events?sort=score.desc&per_page=50&client_id="
         + API_KEY
       );
       const json = await response.json();
@@ -24,7 +24,7 @@ function App() {
     fetchSeatGeekData().catch(console.error);
   }, []);
 
-  console.log(list);
+  // console.log(list); 
   return (
     <DataList list={list}></DataList>
   )
