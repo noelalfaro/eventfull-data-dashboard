@@ -1,24 +1,10 @@
 import React, { useState } from 'react'
 import ToolContainer from './ToolContainer'
+import EventInfo from './EventInfo';
 
 export default function DataList({ list }) {
     const [filteredResults, setFilteredResults] = useState([]);
     const [searchInput, setSearchInput] = useState("");
-
-    // const searchItems = searchValue => {
-    //     setSearchInput(searchValue);
-    //     if (searchValue !== "") {
-    //         const filteredData = Object.keys(list.events).filter((event) =>
-    //             Object.values(item)
-    //                 .join("")
-    //                 .toLowerCase()
-    //                 .includes(searchValue.toLowerCase())
-    //         )
-    //         setFilteredResults(filteredData);
-    //     } else {
-    //         setFilteredResults(Object.keys(list.events));
-    //     }
-    // };
 
 
     const searchItems = (inputString) => {
@@ -39,12 +25,8 @@ export default function DataList({ list }) {
             <ToolContainer />
 
             <div className='search-container'>
-                {/* <label htmlFor="">Search for event </label> */}
-                <input type="text" placeholder='Search for Event' value={searchInput} onChange={(inputString) => searchItems(inputString.target.value)} />
-                <button on>Go</button>
+                <input type="text" placeholder='Search for Event by Venue' value={searchInput} onChange={(inputString) => searchItems(inputString.target.value)} />
             </div>
-
-            {/* onChange={(inputString) => searchItems(inputString.target.value)} */}
 
             <div className='event-list-container'>
 
@@ -52,7 +34,7 @@ export default function DataList({ list }) {
                 <table>
                     <thead>
                         <tr>
-                            <th className='tableHead'>Event Title</th>
+                            <th className='tableHead'>Event Venue</th>
                             <th className='tableHead'>Event Type</th>
                             <th className='tableHead'>Event State</th>
                             <th className='tableHead'>Event Date</th>
@@ -65,63 +47,28 @@ export default function DataList({ list }) {
 
                             searchInput.length > 0
                                 ? filteredResults.map((item) =>
-                                    <tr>
-                                        <td>
-                                            <p>{item.venue.name_v2}</p>
-                                        </td>
-                                        <td>
-                                            <p>{item.type}</p>
-                                        </td>
-                                        <td>
-                                            <p>{item.venue.city}</p>
-                                        </td>
-                                        <td>
-                                            <p>{item.venue.state}</p>
-                                        </td>
+                                    <tr key={item.id}>
+                                        <EventInfo
+                                            id={item.id}
+                                            name={item.venue.name_v2}
+                                            type={item.type}
+                                            city={item.venue.city}
+                                            state={item.venue.state}
+
+                                        />
                                     </tr>
-
-
                                 )
                                 :
 
-
-
-
-                                // {
-                                //     searchInput.length > 0
-                                //         ? filteredResults.map((coin) =>
-                                //             list.Data[coin].PlatformType === "blockchain" ?
-                                //                 <CoinInfo
-                                //                     image={list.Data[coin].ImageUrl}
-                                //                     name={list.Data[coin].FullName}
-                                //                     symbol={list.Data[coin].Symbol}
-                                //                 />
-                                //                 : null
-                                //         )
-                                //         : list && Object.entries(list.Data).map(([coin]) =>
-                                //             list.Data[coin].PlatformType === "blockchain" ?
-                                //                 <CoinInfo
-                                //                     image={list.Data[coin].ImageUrl}
-                                //                     name={list.Data[coin].FullName}
-                                //                     symbol={list.Data[coin].Symbol}
-                                //                 />
-                                //                 : null
-                                //         )
-                                // }
                                 list && Object.entries(list.events).map(([event]) =>
-                                    <tr>
-                                        <td>
-                                            <p key={list.events[event].id}> {list.events[event].venue.name_v2}  </p>
-                                        </td>
-                                        <td>
-                                            <p key={list.events[event].id}>{list.events[event].type} </p>
-                                        </td>
-                                        <td>
-                                            <p key={list.events[event].id}>{list.events[event].venue.city}</p>
-                                        </td>
-                                        <td>
-                                            <p key={list.events[event].id}>{list.events[event].venue.state} </p>
-                                        </td>
+                                    <tr key={list.events[event].id}>
+                                        <EventInfo
+                                            id={list.events[event].id}
+                                            name={list.events[event].venue.name_v2}
+                                            type={list.events[event].type}
+                                            city={list.events[event].venue.city}
+                                            state={list.events[event].venue.state}
+                                        />
                                     </tr>
                                 )
                         }

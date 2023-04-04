@@ -18,10 +18,23 @@ body {
   /* padding: 0.5rem; */
 }
 
+a {
+  color: currentColor;
+}
+
 table {
   margin: 0;
-  width: max-content;
+  width: 100%;
   height: fit-content;
+  table-layout: fixed;
+  border-collapse: collapse;
+  /* background-color: #213547; */
+}
+
+tr a {
+  text-decoration: none;
+  color: currentColor;
+  /* background-color: red; */
 }
 ul {
   margin: 0;
@@ -59,5 +72,9 @@ button {
   .tool {
     background-color: #213547;
     color: #f9f9f9;
+  }
+
+  .search-container input {
+    background-color: #dedddd;
   }
 }

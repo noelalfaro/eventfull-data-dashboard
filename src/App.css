@@ -18,10 +18,17 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+
   box-sizing: border-box;
   padding: 1em;
   text-align: left;
+}
+
+.nav-bar-container a {
+  cursor: pointer;
+  text-decoration: none;
+  color: currentColor;
 }
 
 .nav-bar-container h1 {
@@ -35,7 +42,7 @@
   display: flex;
   width: 80%;
   height: 100%;
-  border: 1px solid currentColor;
+  /* border: 1px solid currentColor; */
   flex-direction: column;
   box-sizing: border-box;
   justify-content: center;
@@ -71,12 +78,22 @@
 }
 
 .search-container {
-  width: 100%;
+  width: 90%;
   height: 10%;
   display: flex;
   justify-content: center;
-  place-items: center;
-  gap: 5px;
+  /* background-color: red; */
+  align-items: center;
+  /* gap: 5px; */
+}
+
+.search-container input {
+  border: none;
+  /* padding: 10px; */
+  outline: none;
+  border-radius: 4px;
+  width: 50%;
+  padding: 10px;
 }
 
 .event-container {
@@ -119,4 +136,93 @@ thead {
   color: #213547;
   background-color: #f9f9f9;
   padding: 5px;
+}
+
+.event-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  height: 100%;
+}
+
+.about-detail-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-text-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  align-items: center;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.event-info-expanded-container {
+  /* border: 2px solid currentColor; */
+  width: 80%;
+  height: 80%;
+  text-align: left;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-info-expanded-container h1 {
+  margin: 0;
+  align-self: center;
+  font-size: 48px;
+}
+.event-info-expanded-container h2 {
+  align-self: center;
+}
+
+.event-info-expanded-container img {
+  width: 300px;
+  align-self: center;
+}
+
+.event-geo {
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  height: fit-content;
+}
+
+.event-geo h2 {
+  margin: 0;
+}
+
+.price-container {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.price-box {
+  width: 30%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.price-box h3 {
+  margin: 0;
+  font-size: 32px;
 }

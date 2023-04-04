@@ -1,30 +1,22 @@
-# Web Development Project 5 - Eventfull Data Dashboard
+# Web Development Project 6 - Seatfull Data Dashboard
 
 Submitted by: Noel Alfaro
+This is a web app built using react and uses the Seatgeek API to showcase different events across the United States. The user can search through events by their different venues and click any specific event to view more information about it. The site also uses react-router-dom to accomplish the navigation.
 
-This is a web app built using react and uses the Seatgeek API to showcase different events across the United States. The user can search across different events that are being fetched.
-
-Time spent: ~9 hours spent in total
+Time spent: **X** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The list displays a list of data fetched using an API call**
-- [x] **Data uses the useEffect React hook and async/await syntax**
-- [x] **The app dashboard includes at least three summary statistics about the data such as**
-  - [x] Event Title
-  - [x] Event Type
-  - [x] Event City
-  - [x] Event State
-- [x] **A search bar allows the user to search for an item in the fetched data**
-- [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [ ] **The app includes at least two unique chart developed using the fetched data that tell an interesting story**
+- [x] **Clicking on an item in the list view displays more details about it**
+- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [ ] Filters use different input types such as a text input, a selection, or a slider
-- [ ] The user can enter specific bounds for filter values
+- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
+- [ ] The site allows users to toggle between different data visualizations
 
 The following **additional** features are implemented:
 
@@ -34,17 +26,24 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./src/assets/gif-kapture2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [Kap] (https://getkap.co/) for macOS
+<!-- Replace this with whatever GIF tool you used! -->
+
+GIF created with ...
+
+<!-- Recommended tools:
+[Kap](https://getkap.co/) for macOS
+[ScreenToGif](https://www.screentogif.com/) for Windows
+[peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
 
-Due to school, I had difficulty finding time to further develop this project, I will complete the remaining requirements in due time.
+Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright 2023
+    Copyright [yyyy] [name of copyright owner]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

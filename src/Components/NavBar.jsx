@@ -4,30 +4,20 @@ import React from 'react'
 // import { ReactComponent as Icon } from "../assets/SeatIcon.jsx";
 import SeatIcon from '../assets/SeatIcon.jsx';
 import NavItem from './NavItem.jsx';
+import { Link } from "react-router-dom";
 
 
 export default function NavBar() {
     return (
         <div className='nav-bar-container'>
-
             <div className='title-container'>
-                <h1>EventFull</h1>
+                <Link to={'/'}><h1>EventFull</h1> </Link>
                 <SeatIcon />
             </div>
 
-            <NavItem name={"Dashboard"} />
-            <NavItem name={"Search"} />
-            <NavItem name={"About"} />
-            {/*         
-            <NavItem>
-                Search
-            </NavItem>
-            <NavItem>
-                About
-            </NavItem> */}
-
-            {/* <SeatIcon></SeatIcon> */}
-
+            <Link to={'/about'}>
+                <NavItem name={"About"} />
+            </Link>
 
         </div>
     )

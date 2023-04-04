@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 import './App.css'
 import DataList from './Components/DataList';
-import NavBar from './Components/NavBar';
 
 
 function App() {
@@ -13,24 +12,21 @@ function App() {
     const fetchSeatGeekData = async () => {
       const response = await fetch(
         // how do we call an API using fetch? 
-        "https://api.seatgeek.com/2/events?per_page=25&client_id="
+        "https://api.seatgeek.com/2/events?per_page=100&client_id="
         + API_KEY
       );
       const json = await response.json();
       setList(json)
-      console.log('json: ', json);
+      // console.log('json: ', json);
 
     };
 
     fetchSeatGeekData().catch(console.error);
   }, []);
 
-  // console.log('list: ', list)
+  console.log(list);
   return (
-    <div className='whole-page'>
-      <NavBar></NavBar>
-      <DataList list={list}></DataList>
-    </div>
+    <DataList list={list}></DataList>
   )
 }
 
