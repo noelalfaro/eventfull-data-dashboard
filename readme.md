@@ -3,7 +3,7 @@
 Submitted by: Noel Alfaro
 This is a web app built using react and uses the Seatgeek API to showcase different events across the United States. The user can search through events by their different venues and click any specific event to view more information about it. The site also uses react-router-dom to accomplish the navigation.
 
-Time spent: **X** hours spent in total
+Time spent: ~6 hours spent in total
 
 ## Required Features
 
@@ -26,7 +26,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./src/assets/gif-kapture-3' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 
