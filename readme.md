@@ -1,7 +1,9 @@
 # Web Development Project 6 - Seatfull Data Dashboard
 
-Submitted by: Noel Alfaro
-This is a web app built using react and uses the Seatgeek API to showcase different events across the United States. The user can search through events by their different venues and click any specific event to view more information about it. The site also uses react-router-dom to accomplish the navigation. Using the recharts npm package, the site charts the most popular upcoming events by state as well
+This is a web app built using React.js and uses the Seatgeek API to showcase popular events across the United States.
+The user can search through events by their different performers and click any specific event to view more information about it such as the prices.
+The Recharts JS library helps chart the lowest prices of the top 20 most popular events.
+The site also uses react-router-dom to accomplish the navigation.
 
 Time spent: ~8 hours spent in total
 
@@ -12,27 +14,15 @@ The following **required** functionality is completed:
 - [x] **The app includes at least one unique chart developed using the fetched data that tell an interesting story**
 - [x] **Clicking on an item in the list view displays more details about it**
 - [x] **Clicking on an item has a direct, unique link to that item's detail view page**
-
-The following **optional** features are implemented:
-
-- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
-- [ ] The site allows users to toggle between different data visualizations
-
-The following **additional** features are implemented:
-
 - Light and Dark Mode implemented
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./src/assets/gif-kapture4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./src/assets/gif-kapture5.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap] (https://getkap.co/) for macOS
-
-## Notes
-
-It was difficult to figure out how to chart the data given by the Seatgeek API
 
 ## License
 
