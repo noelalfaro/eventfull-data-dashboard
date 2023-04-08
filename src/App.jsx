@@ -8,16 +8,17 @@ function App() {
   const [list, setList] = useState(null)
 
 
+
   useEffect(() => {
     const fetchSeatGeekData = async () => {
       const response = await fetch(
         // how do we call an API using fetch? 
-        "https://api.seatgeek.com/2/events?sort=score.desc&per_page=50&client_id="
+        "https://api.seatgeek.com/2/events?sort=score.desc&per_page=150&client_id="
         + API_KEY
       );
       const json = await response.json();
       setList(json)
-      // console.log('json: ', json);
+
 
     };
 

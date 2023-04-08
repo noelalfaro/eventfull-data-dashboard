@@ -18,7 +18,7 @@ const EventChart = ({ list }) => {
         const getEventHist = async () => {
 
             const response = await fetch(
-                "https://api.seatgeek.com/2/events?sort=score.asc&per_page=25&client_id="
+                "https://api.seatgeek.com/2/events?sort=score.desc&sort=lowest_price.desc&per_page=20&client_id="
                 + API_KEY
             );
             const json = await response.json();
@@ -34,7 +34,7 @@ const EventChart = ({ list }) => {
         for (const item of data) {
 
             filteredData.push({
-                'popularity': item.popularity,
+                'Lowest Price': item.stats.lowest_price,
                 'state': item.venue.state
             });
         }
@@ -54,32 +54,31 @@ const EventChart = ({ list }) => {
                 <div>
 
                     <br></br>
-                    <h2 style={{ margin: '0' }}>Popularity of upcoming events by state</h2>
+                    <h2 style={{ margin: '0' }}>Lowest Price of Top 20 Most Popular Events</h2>
 
                     <LineChart
                         width={800}
                         height={300}
-                        data={cleanData(list.events)}
+                        data={cleanData(histData)}
                     >
                         <Line
                             type="monotone"
-                            dataKey="popularity"
-                            stroke="#213547"
+                            dataKey="Lowest Price"
+                            stroke="currentColor"
                         />
                         <CartesianGrid />
-                        <XAxis dataKey="state" interval={1} angle={20} dx={20}>
+                        <XAxis dataKey="state" angle={20} dx={20}>
                             {/* <Label value="State" /> */}
                         </XAxis>
 
                         <YAxis
                             label={{
-                                value: "Score",
+                                value: "Price",
                                 angle: -90,
-                                position: "insideLeft",
-
+                                position: "insideLeft"
                             }}
                         />
-                        <Tooltip />
+                        <Tooltip wrapperStyle={{ color: "#213547", backgroundColor: "blue" }} />
                     </LineChart>
 
 

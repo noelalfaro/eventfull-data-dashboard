@@ -1,52 +1,38 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 import EventChart from "./EventChart";
 
 export default function EventDetail() {
-
     let params = useParams();
     const [fullDetails, setFullDetails] = useState(null);
-
-
+    const [formattedDate, setFormattedDate] = useState("");
 
     useEffect(() => {
         const getEventDetail = async () => {
-
-
-
             const details = await fetch(
-                `https://api.seatgeek.com/2/events?id=${params.id}&client_id=` +
-                API_KEY
+                `https://api.seatgeek.com/2/events?id=${params.id}&client_id=` + API_KEY
             );
-
             const detailsJson = await details.json();
-            // console.log('detailsJson: ', detailsJson);
-
-
-            // const descJson = await description.json();
-            // console.log('descJson: ', descJson);
-
-
             setFullDetails({ events: detailsJson.events });
-            // console.log('detailsJson: ', detailsJson);
         };
-
         getEventDetail().catch(console.error);
     }, []);
 
-
     useEffect(() => {
-        console.log('fullDetails: ', fullDetails)
-    }, [fullDetails])
-
-
-
+        if (fullDetails) {
+            const accurateDay = new Date(fullDetails.events[0].datetime_local.toString());
+            const formattedDay = accurateDay.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+            });
+            setFormattedDate(formattedDay);
+        }
+    }, [fullDetails]);
 
     return (
-
         <div className="event-detail-container">
-
             {fullDetails && (
                 <>
                     <div className="event-info-expanded-container">
@@ -55,6 +41,7 @@ export default function EventDetail() {
                         <div className="event-geo">
                             <h2>{fullDetails.events[0].type}</h2>
                             <h2>{fullDetails.events[0].venue.display_location}</h2>
+                            <h2>{formattedDate}</h2>
                         </div>
 
                         <div className="price-container">
@@ -67,26 +54,15 @@ export default function EventDetail() {
                             <div className="price-box">
                                 <h3>Highest Price - {fullDetails.events[0].stats.highest_price || "unavailable"}</h3>
                             </div>
-
-
-
                         </div>
 
-
-                        <h2><a href={fullDetails.events[0].performers[0].url}>Buy Tickets</a></h2>
+                        <h2>
+                            <a href={fullDetails.events[0].performers[0].url}>Buy Tickets</a>
+                        </h2>
                         <EventChart id={params.id} />
-
-
-
-
-
                     </div>
                 </>
             )}
-
-
         </div>
-
-
-    )
+    );
 }
